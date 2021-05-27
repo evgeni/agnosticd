@@ -1,4 +1,20 @@
 ---
+- name: "HACK: Fix OS description - https://bugzilla.redhat.com/1962119"
+  theforeman.foreman.operatingsystem:
+    name: RedHat
+    os_family: Redhat
+    major: 8
+    minor: 1
+    description: ''
+    username: "{{ satellite_admin }}"
+    password: "{{ satellite_admin_password }}"
+    server_url: "https://{{ publicname }}"
+    validate_certs: false
+    state: present
+  tags:
+    - configure_satellite
+    - satellite_hostgroup
+
 - name: "Create a Hostgroup"
   theforeman.foreman.hostgroup:
     name: "{{ item.name }}"
