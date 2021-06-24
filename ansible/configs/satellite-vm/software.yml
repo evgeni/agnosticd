@@ -69,6 +69,7 @@
   hosts: satellite_hosts
   become: true
   gather_facts: true
+  serial: 1
   tasks:
     - when: configure_satellite
       include_role:
