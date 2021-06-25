@@ -4,7 +4,7 @@
     name: RedHat
     os_family: Redhat
     major: 8
-    minor: 1
+    minor: 4
     description: ''
     username: "{{ satellite_admin }}"
     password: "{{ satellite_admin_password }}"
